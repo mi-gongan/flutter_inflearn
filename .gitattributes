@@ -4,6 +4,7 @@ ios/* linguist-vendored
 linux/* linguist-vendored
 linux/flutter/* linguist-vendored
 macos/* linguist-vendored
+windows/* linguist-vendored
 windows/runner/* linguist-vendored
 windows/flutter/* linguist-vendored
 web/* linguist-vendored
