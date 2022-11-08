@@ -3,7 +3,7 @@ import 'package:inflearn/screen/carousel_screen.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: CarouselScreen(),
     ),
   );

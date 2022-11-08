@@ -5,7 +5,7 @@ void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           headline1: TextStyle(
             color: Colors.white,
             fontFamily: 'parisienne',
@@ -29,7 +29,7 @@ void main() {
           ),
         ),
       ),
-      home: DateScreen(),
+      home: const DateScreen(),
     ),
   );
 }

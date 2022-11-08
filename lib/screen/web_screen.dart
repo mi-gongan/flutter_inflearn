@@ -11,7 +11,7 @@ class WebScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('code factory'),
+        title: const Text('code factory'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -21,7 +21,7 @@ class WebScreen extends StatelessWidget {
               }
               controller!.loadUrl(homeUrl);
             },
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
           ),
         ],
       ),

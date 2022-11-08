@@ -3,7 +3,7 @@ import 'package:inflearn/screen/home_screen.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     ),

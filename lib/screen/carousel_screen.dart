@@ -20,7 +20,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
   void initState() {
     super.initState();
 
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       int currentPage = controller.page!.toInt();
       int nextPage = currentPage + 1;
 
@@ -30,7 +30,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
 
       controller.animateToPage(
         nextPage,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.linear,
       );
     });

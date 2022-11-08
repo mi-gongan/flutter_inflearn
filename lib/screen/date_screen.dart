@@ -29,7 +29,7 @@ class _DateScreenState extends State<DateScreen> {
                 selectedDate: selectedDate,
                 onPressed: onHeartPressed,
               ),
-              _BottomPart(),
+              const _BottomPart(),
             ],
           ),
         ),
@@ -108,7 +108,7 @@ class _TopPart extends StatelessWidget {
           ),
           IconButton(
             iconSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.favorite,
               color: Colors.red,
             ),
