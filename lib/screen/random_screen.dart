@@ -12,6 +12,7 @@ class RandomScreen extends StatefulWidget {
 }
 
 class _RandomScreenState extends State<RandomScreen> {
+  int maxNumber = 1000;
   List<int> randomNumbers = [123, 456, 789];
 
   @override
@@ -44,10 +45,11 @@ class _RandomScreenState extends State<RandomScreen> {
     final Set<int> newNumbers = {};
 
     while (newNumbers.length != 3) {
-      final number = rand.nextInt(1000);
+      final number = rand.nextInt(maxNumber);
 
       newNumbers.add(number);
     }
+
     setState(() {
       randomNumbers = newNumbers.toList();
     });

@@ -12,6 +12,7 @@ class _SettingScreenState extends State<SettingScreen> {
   double maxNumber = 1000;
   @override
   Widget build(BuildContext context) {
+    print(maxNumber.toString().split(''));
     return Scaffold(
       backgroundColor: PRIMARY_COLOR,
       body: SafeArea(
@@ -25,6 +26,7 @@ class _SettingScreenState extends State<SettingScreen> {
               Expanded(
                 child: Row(
                   children: maxNumber
+                      .ceil()
                       .toString()
                       .split('')
                       .map((e) => Image.asset(
@@ -47,7 +49,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: RED_COLOR),
-                child: Text("저장!"),
+                child: const Text("저장!"),
                 onPressed: () {
                   Navigator.of(context).pop(maxNumber.toInt());
                 },
