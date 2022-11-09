@@ -3,7 +3,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class WebScreen extends StatelessWidget {
   WebViewController? controller;
-  final homeUrl = "https://blog.codefactory.ai";
+  final homeUrl = "https://migong.oopy.io/";
   WebScreen({super.key});
 
   @override
@@ -19,7 +19,7 @@ class WebScreen extends StatelessWidget {
               if (controller == null) {
                 return;
               }
-              controller!.loadUrl(homeUrl);
+              controller!.goBack();
             },
             icon: const Icon(Icons.home),
           ),
@@ -31,6 +31,7 @@ class WebScreen extends StatelessWidget {
         },
         initialUrl: homeUrl,
         javascriptMode: JavascriptMode.unrestricted,
+        gestureNavigationEnabled: true,
       ),
     );
   }

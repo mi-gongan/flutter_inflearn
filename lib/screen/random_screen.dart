@@ -25,7 +25,7 @@ class _RandomScreenState extends State<RandomScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _Header(),
+              _Header(onPressed: onSettingsPop),
               _Body(
                 randomNumbers: randomNumbers,
               ),
@@ -54,10 +54,25 @@ class _RandomScreenState extends State<RandomScreen> {
       randomNumbers = newNumbers.toList();
     });
   }
+
+  void onSettingsPop() async {
+    final int? result = await Navigator.of(context)
+        .push<int>(MaterialPageRoute(builder: (BuildContext context) {
+      return SettingScreen(
+        maxNumber: maxNumber,
+      );
+    }));
+    if (result != null) {
+      setState(() {
+        maxNumber = result;
+      });
+    }
+  }
 }
 
 class _Header extends StatelessWidget {
-  const _Header({Key? key}) : super(key: key);
+  final VoidCallback onPressed;
+  const _Header({required this.onPressed, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,17 +88,11 @@ class _Header extends StatelessWidget {
           ),
         ),
         IconButton(
-          icon: const Icon(
-            Icons.settings,
-            color: RED_COLOR,
-          ),
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext context) {
-              return SettingScreen();
-            }));
-          },
-        ),
+            icon: const Icon(
+              Icons.settings,
+              color: RED_COLOR,
+            ),
+            onPressed: onPressed),
       ],
     );
   }
